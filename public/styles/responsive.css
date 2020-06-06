@@ -24,6 +24,19 @@
     #page-search-results .cards {
         grid-template-columns: 1fr;
     }
+
+    #page-search-results .cards img {
+        height: 250px;
+    }
+
+    #page-search-results .field-group {
+        flex-direction: column;
+    }
+
+    #page-search-results .field-group .field + .field {
+        margin-left: 0;
+    }
+
 }
 
 @media (min-width: 1700px) {
