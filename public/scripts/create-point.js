@@ -16,7 +16,7 @@ function getCities(){
     const citySelect = document.querySelector("select[name=city]")
     const stateInput = document.querySelector("input[name=state]")
     const ufValue = event.target.value
-    console.log('ufValue = ' + ufValue)
+    // console.log('ufValue = ' + ufValue)
     const indexOfSelectedState = event.target.selectedIndex
     // console.log('indexOfSelectedState = ' + indexOfSelectedState)
     stateInput.value = event.target.options[indexOfSelectedState].text
@@ -56,6 +56,8 @@ function handleSelectedItem(event) {
     itemLi.classList.toggle("selected")
     const itemId = event.target.dataset.id
 
+    // console.log('Item nº: ', itemId)
+
     /** verificar se existem itens selecionados 
      se sim, pegar os itens selecionados */
 
@@ -73,6 +75,8 @@ function handleSelectedItem(event) {
         /* se não estiver selecionado, adicionar à seleção */
         selectedItems.push(itemId)
     }
+
+    // console.log('SelectedItems: ', selectedItems)
 
     /* atualiar o campo escondido com os itens selecionado */
     collectedItems.value = selectedItems

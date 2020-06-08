@@ -15,33 +15,40 @@
 
     <main>
 
-        <h4>
-            <strong>2 pontos</strong>
-            encontrados
-        </h4>
+        {% if total > 0 %}
 
-        <div class="cards">
-            <div class="card">
-                <img src="./assets/Coletoria-01.jpg" alt="Coletoria">
-                <h1>Coletoria</h1>
-                <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-                <p>
-                    Rio do Sul, Santa Catarina<br/>
-                    Guilherme Gemballa, Jardim América<br/>
-                    Nº 260
-                </p>
+            <h4>
+                <strong>{{ total }}
+                    pontos</strong>
+                encontrados
+            </h4>
+
+            <div class="cards">
+                {# aqui será feito o loop que fará exibir todas as informações do bd na tela #}
+                {% for place in places %}
+                    <div class="card">
+                        <img src="{{ place.image }}" alt="{{ place.name}}">
+                        <h1>{{ place.name }}</h1>
+                        <h3>{{ place.items}}</h3>
+                        <p>
+                            {{ place.city }},
+                            {{ place.state }}<br/>
+                            {{ place.address }}<br/>
+                            {{ place.address2 }}
+                        </p>
+                    </div>
+                {% endfor %}
+
             </div>
-            <div class="card">
-                <img src="./assets/Papersider.jpg" alt="Paperside">
-                <h1>Paperside</h1>
-                <h3>Papéis e Papelão</h3>
-                <p>
-                    Rio do Sul, Santa Catarina<br/>
-                    Guilherme Gemballa, Jardim América<br/>
-                    Nº 260
-                </p>
-            </div>
-        </div>
+
+        {% else %}
+
+            <h4>
+                <strong>Nenhum
+                </strong>
+                local encontrado</h4>
+
+        {% endif %}
 
     </main>
 {% endblock content %}
