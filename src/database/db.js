@@ -76,14 +76,14 @@ module.exports = db
 // })
 
 //     // consultando bd após deleção
-db.all(`
-    SELECT * FROM places`,
-    function (err, rows) {
-        if (err) {
-            return console.log(err)
-        }
-        console.log('Lista dos registros solicitada:')
-        console.log(rows)
-    }
-)
+// db.all(`
+//     SELECT * FROM places`,
+//     function (err, rows) {
+//         if (err) {
+//             return console.log(err)
+//         }
+//         console.log('Lista dos registros solicitada:')
+//         console.log(rows)
+//     }
+// )
 // })
